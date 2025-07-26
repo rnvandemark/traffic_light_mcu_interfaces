@@ -16,6 +16,8 @@ find_package(builtin_interfaces REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(traffic_light_mcu_interfaces
+    "msg/ConsolidatedUpdate.msg"
+    "msg/SparsePlaybackUpdate.msg"
     "msg/TrafficLightStates.msg"
     DEPENDENCIES builtin_interfaces
 )
