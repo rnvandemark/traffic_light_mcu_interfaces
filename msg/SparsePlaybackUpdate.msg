@@ -2,7 +2,7 @@
 # playback is currently paused.
 
 # The most recent timestamp of the active sound file.
-builtin_interfaces/Time timestamp
+builtin_interfaces/Duration current_timestamp
 
 # Whether or not playback has just finished.
 bool is_finished
