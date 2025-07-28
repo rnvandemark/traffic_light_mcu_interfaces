@@ -1,6 +1,10 @@
 # A message which consolidates all possible traffic light updates into a single
 # message, so the traffic light MCU only needs a single subscription.
 
+# The ground truth for current time that the MCU should use when regarding
+# this message's data.
+builtin_interfaces/Time timestamp
+
 # Whether or not state_override should be used. If this is true, the other
 # types of updates below are ignored.
 bool state_override_set
