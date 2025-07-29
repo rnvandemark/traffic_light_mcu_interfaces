@@ -13,16 +13,22 @@ bool state_override_set
 # only considered valid if state_override_set is high.
 uint8 state_override
 
-# Whether or not new_states should be used.
+# Whether or not new_states and discard_current_states should be used.
 bool new_states_set
 
+# Whether or not any current states data should be discarded. Only considered
+# valid if new_states_set is set high, and this is ignored if
+# state_override_set is high.
+bool discard_current_states
+
 # A new collection of new states to start using. Only considered valid if
-# new_states_set is set high, and this is ignored if state_override_set is set.
+# new_states_set is set high, and this is ignored if state_override_set is
+# high.
 TrafficLightStates new_states
 
 # Whether or not update should be used.
 bool update_set
 
 # The next playback update. Only considered valid if update_set is set high,
-# and this is ignored if state_override_set is set.
+# and this is ignored if state_override_set is high.
 SparsePlaybackUpdate update
