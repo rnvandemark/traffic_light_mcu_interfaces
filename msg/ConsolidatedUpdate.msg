@@ -5,8 +5,10 @@
 # this message's data.
 builtin_interfaces/Time timestamp
 
-# Whether or not state_override should be used. If this is true, the other
-# types of updates below are ignored.
+# Whether or not to start ignoring a previous state override.
+#bool clear_state_override
+
+# Whether or not state_override should be used.
 bool state_override_set
 
 # The state, packed into three bits, to use no matter where playback is at,
@@ -17,18 +19,15 @@ uint8 state_override
 bool new_states_set
 
 # Whether or not any current states data should be discarded. Only considered
-# valid if new_states_set is set high, and this is ignored if
-# state_override_set is high.
+# valid if new_states_set is set high.
 bool discard_current_states
 
 # A new collection of new states to start using. Only considered valid if
-# new_states_set is set high, and this is ignored if state_override_set is
-# high.
+# new_states_set is set high.
 TrafficLightStates new_states
 
 # Whether or not update should be used.
 bool update_set
 
-# The next playback update. Only considered valid if update_set is set high,
-# and this is ignored if state_override_set is high.
+# The next playback update. Only considered valid if update_set is set high.
 SparsePlaybackUpdate update
